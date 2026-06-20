@@ -1,37 +1,59 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
-# dependencies
+# ─── Dépendances ────────────────────────────────────────────────────────────
 node_modules/
 
-# Expo
+# ─── Expo ────────────────────────────────────────────────────────────────────
 .expo/
 dist/
 web-build/
 expo-env.d.ts
+.metro-health-check*
 
-# Native
+# ─── Build natifs (générés par expo prebuild) ─────────────────────────────
+/ios
+/android
 .kotlin/
+
+# ─── Fichiers de clés / certificats natifs ───────────────────────────────
 *.orig.*
 *.jks
 *.p8
 *.p12
 *.key
 *.mobileprovision
-
-# Metro
-.metro-health-check*
-
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
-
-# macOS
-.DS_Store
 *.pem
 
-# local env files
-.env*.local
+# ─── Variables d'environnement — NE JAMAIS COMMITTER ─────────────────────
+.env
+.env.local
+.env.*.local
+# .env.example est volontairement exclu de cette liste (il peut être commité)
 
-# typescript
+# ─── Logs ────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.*
+npm-debug.log*
+yarn-debug.*
+yarn-debug.log*
+yarn-error.*
+yarn-error.log*
+
+# ─── Fichiers système ────────────────────────────────────────────────────────
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# ─── Éditeurs ────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ─── TypeScript ──────────────────────────────────────────────────────────────
 *.tsbuildinfo
